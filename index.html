@@ -1,14 +1,29 @@
-<h1>hydra inside a webpage</h1>
-<canvas id="myCanvas" style="width:400px; height:400px;"></canvas>
-
-<!-- import the latest version of hydra synth-->
+<style>
+  canvas {
+    position: fixed;
+    top: 0;
+  }
+  
+  img {
+  	width: 100vw;  
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+</style>
+<body>
+<img src="deadeye.svg" alt="deadeye by bboyb">
 <script src="https://unpkg.com/hydra-synth"></script>
 <script>
-  // create a new hydra-synth instance
-  new window.Hydra({
-    canvas: document.getElementById("myCanvas"),
-    detectAudio: false
-  })
+  const canvas = document.createElement('canvas')
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+  document.body.appendChild(canvas)
+  new window.Hydra({ canvas, detectAudio: false })
   // licensed with CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
   //Pixelscape
   //Marianne Teixido
@@ -34,3 +49,4 @@
   render(o0)
 
 </script>
+</body>
